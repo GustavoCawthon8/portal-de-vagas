@@ -11,7 +11,7 @@ jobRouter.get("/:id", jobController.getById);
 //rotas protegidas
 jobRouter.post("/", authMiddleware, jobController.create);
 jobRouter.get("/me/mine",authMiddleware, jobController.getMyJobs);
-jobRouter.post("/:id", authMiddleware, jobController.update);
-jobRouter.get("/:id",authMiddleware, jobController.delete);
+jobRouter.put("/:id", authMiddleware, jobController.update);
+jobRouter.delete("/:id",authMiddleware, jobController.delete);
 
 module.exports = jobRouter;
